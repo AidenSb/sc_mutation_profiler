@@ -1,3 +1,4 @@
+# from sridnona/cb_sniffer
 from collections import defaultdict
 import pysam
 import logging as logger
