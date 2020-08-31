@@ -2,7 +2,7 @@
 
 inp=$1
 samout="${inp}_temp_samsorted.bam"
-samtools sort  $inp -o $samout
+samtools sort -@ 4 $inp -o $samout
 ARGout="${inp}__temp_sort_addgroup.bam"
 gatk AddOrReplaceReadGroups --INPUT $samout  --OUTPUT $ARGout --RGLB lib1 --RGPL illumina --RGPU unit1 --RGSM 20 --SORT_ORDER coordinate
 MDout="${inp}_temp_sort_addgroup_rawdedupped.bam"
